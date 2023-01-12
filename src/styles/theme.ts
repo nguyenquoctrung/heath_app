@@ -10,6 +10,7 @@ export const Colors = {
   Dark600: "#2E2E2E",
   Dark500: "#414141",
   Gray400: "#777777",
+  Gray200: "#f0ecec",
 };
 
 export const Devices = {

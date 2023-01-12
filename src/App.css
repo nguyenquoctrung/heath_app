@@ -24,3 +24,29 @@
     transform: rotate(360deg);
   }
 }
+@font-face {
+  font-family: "Inter";
+  src: url("./fonts/Inter/Inter-Black.ttf") format("woff");
+  src: url("./fonts/Inter/Inter-Bold.ttf") format("woff");
+  src: url("./fonts/Inter/Inter-ExtraBold.ttf") format("woff");
+  src: url("./fonts/Inter/Inter-Light.ttf") format("woff");
+  src: url("./fonts/Inter/Inter-Medium.ttf") format("woff");
+  src: url("./fonts/Inter/Inter-Regular.ttf") format("woff");
+  src: url("./fonts/Inter/Inter-SemiBold.ttf") format("woff");
+  src: url("./fonts/Inter/Inter-Thin.ttf") format("woff");
+  src: url("./fonts/Inter/Inter-VariableFont_slntwght.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "Noto_Sans_JP";
+  src: url("./fonts/Noto_Sans_JP/NotoSansJP-Black.otf") format("woff");
+  src: url("./fonts/Noto_Sans_JP/NotoSansJP-Bold.otf") format("woff");
+  src: url("./fonts/Noto_Sans_JP/NotoSansJP-Light.otf") format("woff");
+  src: url("./fonts/Noto_Sans_JP/NotoSansJP-Medium.otf") format("woff");
+  src: url("./fonts/Noto_Sans_JP/NotoSansJP-Regular.otf") format("woff");
+  src: url("./fonts/Noto_Sans_JP/NotoSansJP-Thin.otf") format("woff");
+}
+@font-face {
+  font-family: "Hiragino Kaku Gothic Pro";
+  src: url("./fonts/Hiragino/Hiragino-Kaku-Gothic.otf") format("woff");
+}

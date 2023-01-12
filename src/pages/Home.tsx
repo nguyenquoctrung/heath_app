@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import morning from "../assets/svg/morning.svg";
 import snack from "../assets/svg/snack.svg";
 
@@ -11,7 +11,7 @@ import d02 from "../assets/img/d02.jpg";
 import s01 from "../assets/img/s01.jpg";
 
 import styled from "styled-components";
-import { Colors, Devices } from "../styles/theme";
+import { Colors } from "../styles/theme";
 import Header from "../components/Header";
 import ChartDate from "../components/ChartDate";
 import ChartWeight from "../components/ChartWeight";
@@ -20,10 +20,13 @@ import ScrollButton from "../components/ScrollButton";
 import Thumbnail from "../components/Thumbnail";
 import Footer from "../components/Footer";
 
+import ButtonViewMore from "../components/ButtonViewMore";
+
 const AuthModuleWrapper = styled.div`
   min-height: 100vh;
   width: 100%;
   background-color: ${Colors.Light};
+  font-family: "Inter";
 `;
 
 const TopPage = styled.div`
@@ -38,7 +41,6 @@ const TopPage = styled.div`
   .weight {
   }
 `;
-
 const Container = styled.div`
   margin: 0 auto;
   max-width: 120rem;
@@ -46,9 +48,8 @@ const Container = styled.div`
   padding: 0 5rem;
   flex: 1;
   justify-content: space-between;
-  ${Devices.UpTabletLandscape} {
-    background-color: ${Colors.Light};
-  }
+  max-width: 900px;
+  margin: auto;
 `;
 
 const Menu = styled.div`
@@ -60,6 +61,7 @@ const Menu = styled.div`
   padding: 2rem 0;
 `;
 const ThumbnailList = styled.div`
+  padding: 1rem 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 1rem;
@@ -68,18 +70,41 @@ const ThumbnailList = styled.div`
   width: 100%;
 `;
 
-const ButtonViewMore = styled.button`
-  cursor: pointer;
-  margin: 2rem 0;
-  width: 25%;
-  background: linear-gradient(32.95deg, #ffcc21 8.75%, #ff963c 86.64%);
-  height: 5.6rem;
-  border-radius: 0.1rem;
-  color: ${Colors.Light};
-  border: none;
-  fontsize: 1.8rem;
-`;
+const data = [
+  {
+    title: "05.21.Morning",
+    background: m01,
+  },
+  {
+    title: "05.21.Lunch",
+    background: l03,
+  },
+  {
+    title: "05.21.Dinner",
+    background: d01,
+  },
+  {
+    title: "05.21.Snack",
+    background: l01,
+  },
+  {
+    title: "05.20.Morning",
+    background: m01,
+  },
+  {
+    title: "05.20.Lunch",
+    background: l02,
+  },
+  {
+    title: "05.20.Dinner",
+    background: d02,
+  },
+  {
+    title: "05.21.Snack",
 
+    background: s01,
+  },
+];
 class Home extends Component {
   render() {
     return (
@@ -94,7 +119,6 @@ class Home extends Component {
           </div>
         </TopPage>
         <Container>
-          <ScrollButton />
           <Menu>
             <HexagonMenu title={"Morning"} icon={morning} />
             <HexagonMenu title={"Lunch"} icon={morning} />
@@ -102,18 +126,14 @@ class Home extends Component {
             <HexagonMenu title={"Snack"} icon={snack} />
           </Menu>
           <ThumbnailList>
-            <Thumbnail title={"05.21.Morning"} background={m01} />
-            <Thumbnail title={"05.21.Lunch"} background={l03} />
-            <Thumbnail title={"05.21.Dinner"} background={d01} />
-            <Thumbnail title={"05.21.Snack"} background={l01} />
-            <Thumbnail title={"05.20.Morning"} background={m01} />
-            <Thumbnail title={"05.20.Lunch"} background={l02} />
-            <Thumbnail title={"05.20.Dinner"} background={d02} />
-            <Thumbnail title={"05.21.Snack"} background={s01} />
+            {data?.map((item, index) => {
+              return (
+                <Thumbnail key={index} title={item.title} background={item.background} />
+              )
+            })};
           </ThumbnailList>
-          <ButtonViewMore className="button-more">
-            記録をもっと見る
-          </ButtonViewMore>
+          <ButtonViewMore content={"記録をもっと見る"} />
+          <ScrollButton />
         </Container>
         <Footer />
       </AuthModuleWrapper>

@@ -9,7 +9,7 @@ export const Heading = styled.h1`
 `;
 
 export const Content = styled.div`
-  overflowy: scroll;
+  overflow-y: scroll;
   height: 2500px;
 `;
 

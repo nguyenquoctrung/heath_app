@@ -1,6 +1,7 @@
 import React from "react";
 
 import styled from "styled-components";
+import { Colors } from "../styles/theme";
 
 const Chart = styled.div`
   width: 100%;
@@ -13,7 +14,7 @@ const Chart = styled.div`
     font-size: 40px;
     line-height: 160px;
     height: 160px;
-    color: #fff;
+    color: ${Colors.Light};
   }
 
   canvas {

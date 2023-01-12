@@ -2,6 +2,7 @@ import React from "react";
 
 import styled from "styled-components";
 import bg from "../assets/svg/bg.svg";
+import { Colors } from "../styles/theme";
 
 const Hexagon = styled.div<{ background: string }>`
   background: url(${(props) => props.background});
@@ -9,23 +10,23 @@ const Hexagon = styled.div<{ background: string }>`
   background-position: center;
   .box-5 {
     width: 0;
-    border-bottom: 30px solid #ffcc21;
+    border-bottom: 30px solid ${Colors.Primary300};
     border-left: 52px solid transparent;
     border-right: 52px solid transparent;
   }
 
   .box-6 {
     width: 0;
-    border-top: 30px solid #ffcc21;
+    border-top: 30px solid  ${Colors.Primary300};
     border-left: 52px solid transparent;
     border-right: 52px solid transparent;
   }
   .box-7 {
     width: 104px;
     height: 60px;
-    background-color: #ffcc21;
+    background-color:  ${Colors.Primary300};
     .label {
-      color: #fff;
+      color:  ${Colors.Light};
       font-family: "Inter";
     }
   }

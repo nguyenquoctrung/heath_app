@@ -1,10 +1,10 @@
 import React from "react";
 
 import styled from "styled-components";
+import { Colors } from "../styles/theme";
 
 const Hexagon = styled.div<{ background: string }>`
-  height: 23rem;
-  width: 23rem;
+  height: 234px;
   background: url(${(props) => props.background});
   background-size: cover;
   background-position: center;
@@ -12,11 +12,11 @@ const Hexagon = styled.div<{ background: string }>`
   width: 100%;
   .label {
     padding: 0.5rem;
-    background: #ffcc21;
+    background: ${Colors.Primary300};
     width: 50%;
     bottom: 0;
     position: absolute;
-    color: #fff;
+    color: ${Colors.Light}
   }
 `;
 
