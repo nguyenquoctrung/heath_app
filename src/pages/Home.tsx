@@ -32,6 +32,10 @@ const AuthModuleWrapper = styled.div`
 const TopPage = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr;
+  position: sticky;
+  top: 4rem;
+  z-index: 2;
+  box-shadow: 1px 1px #f0ecec;
   .date {
     min-height: 20rem;
     background-image: url(${d01});
