@@ -2,8 +2,9 @@ import React from "react";
 
 import * as Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
+import { Colors } from "../styles/theme";
 
-interface IChartweightProps {}
+interface IChartweightProps { }
 
 export const ChartWeight: React.FunctionComponent<IChartweightProps> = () => {
   const options: Highcharts.Options = {
@@ -53,6 +54,7 @@ export const ChartWeight: React.FunctionComponent<IChartweightProps> = () => {
       series: {
         label: {
           connectorAllowed: false,
+
         },
       },
     },
@@ -61,11 +63,13 @@ export const ChartWeight: React.FunctionComponent<IChartweightProps> = () => {
         name: "",
         type: "line",
         data: [20, 19, 15, 16, 15, 14, 16, 14, 14, 13, 11, 12],
+        color: Colors.Primary300,
       },
       {
         name: "",
         type: "line",
         data: [20, 18, 16, 15, 13, 14, 12, 11, 9, 8, 7, 7],
+        color: Colors.Secondary300
       },
     ],
     responsive: {
@@ -84,6 +88,12 @@ export const ChartWeight: React.FunctionComponent<IChartweightProps> = () => {
         },
       ],
     },
+    chart: {
+      backgroundColor: Colors.Dark600,
+      polar: true,
+      type: 'line'
+    }
+
   };
 
   return <HighchartsReact highcharts={Highcharts} options={options} />;

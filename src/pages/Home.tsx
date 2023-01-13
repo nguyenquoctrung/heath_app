@@ -13,13 +13,12 @@ import s01 from "../assets/img/s01.jpg";
 import styled from "styled-components";
 import { Colors } from "../styles/theme";
 import Header from "../components/Header";
-import ChartDate from "../components/ChartDate";
+import CircularStatic from "../components/CircularStatic";
 import ChartWeight from "../components/ChartWeight";
 import HexagonMenu from "../components/HexagonMenu";
 import ScrollButton from "../components/ScrollButton";
 import Thumbnail from "../components/Thumbnail";
 import Footer from "../components/Footer";
-
 import ButtonViewMore from "../components/ButtonViewMore";
 
 const AuthModuleWrapper = styled.div`
@@ -33,14 +32,14 @@ const TopPage = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr;
   position: sticky;
-  top: 4rem;
-  z-index: 2;
-  box-shadow: 1px 1px #f0ecec;
   .date {
     min-height: 20rem;
     background-image: url(${d01});
     background-position: center;
     background-size: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .weight {
   }
@@ -116,7 +115,7 @@ class Home extends Component {
         <Header />
         <TopPage>
           <div className="date">
-            <ChartDate percent={75} />
+            <CircularStatic />
           </div>
           <div className="weight">
             <ChartWeight />
