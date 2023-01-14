@@ -15,6 +15,7 @@ import MyDiary from "../components/MyDiary";
 
 import ButtonViewMore from "../components/ButtonViewMore";
 import ChartWeight from "../components/ChartWeight";
+import { Grid } from "@mui/material";
 
 const AuthModuleWrapper = styled.div`
   min-height: 100vh;
@@ -22,7 +23,6 @@ const AuthModuleWrapper = styled.div`
   background-color: ${Colors.Light};
   font-family: "Inter";
 `;
-
 
 const Container = styled.div`
   margin: 0 auto;
@@ -33,16 +33,6 @@ const Container = styled.div`
   justify-content: space-between;
   max-width: 900px;
   margin: auto;
-`;
-
-const RecommendsList = styled.div`
-  padding: 1rem 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  align-items: center;
-  justify-content: space-around;
-  width: 100%;
 `;
 
 const data = [
@@ -68,18 +58,20 @@ class MyRecord extends Component {
       <AuthModuleWrapper>
         <Header />
         <Container>
-          <RecommendsList>
+          <Grid container spacing={1} sx={{ marginTop: 2, marginBottom: 3 }} columns={12}>
             {data?.map((item, index) => {
               return (
-                <Recommend
-                  key={index}
-                  title={item.title}
-                  subTitle={item.subTitle}
-                  background={item.image}
-                />
+                <Grid item xs={12} sm={6} md={6} lg={4}>
+                  <Recommend
+                    key={index}
+                    title={item.title}
+                    subTitle={item.subTitle}
+                    background={item.image}
+                  />
+                </Grid>
               );
             })}
-          </RecommendsList>
+          </Grid>
           <ChartWeight />
           <MyExercise />
           <MyDiary />

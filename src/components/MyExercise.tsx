@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Colors } from "../styles/theme";
 
 const Wrapper = styled.div`
-  margin: 1rem 0;
+  margin: 2rem 0;
   padding: 1rem;
   background-color: ${Colors.Dark500};
   justify-content: center;
@@ -64,7 +64,7 @@ const Wrapper = styled.div`
   }
 `;
 
-interface IExerciseProps {}
+interface IExerciseProps { }
 
 const data = {
   name: "家事全般（立位・軽い）",
@@ -86,7 +86,7 @@ export const Exercise: React.FunctionComponent<IExerciseProps> = () => {
             return (
               <div className="item" key={index}>
                 <div className="name">
-                  <div>{item.name}</div>
+                  <div className="item-name">{item.name}</div>
                   <div className="kcal">{item.kcal}</div>
                 </div>
                 <div className="time">{item.time}</div>

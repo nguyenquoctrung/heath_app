@@ -20,6 +20,7 @@ import ScrollButton from "../components/ScrollButton";
 import Thumbnail from "../components/Thumbnail";
 import Footer from "../components/Footer";
 import ButtonViewMore from "../components/ButtonViewMore";
+import { Grid } from "@mui/material";
 
 const AuthModuleWrapper = styled.div`
   min-height: 100vh;
@@ -54,25 +55,11 @@ const Container = styled.div`
   max-width: 900px;
   margin: auto;
 `;
-
-const Menu = styled.div`
-  display: inline-flex;
-  gap: 2rem;
+const MenuItem = styled(Grid)`
+  display: flex;
   align-items: center;
-  justify-content: space-around;
-  width: 100%;
-  padding: 2rem 0;
+  justify-content: center;
 `;
-const ThumbnailList = styled.div`
-  padding: 1rem 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 1rem;
-  align-items: center;
-  justify-content: space-around;
-  width: 100%;
-`;
-
 const data = [
   {
     title: "05.21.Morning",
@@ -122,19 +109,34 @@ class Home extends Component {
           </div>
         </TopPage>
         <Container>
-          <Menu>
-            <HexagonMenu title={"Morning"} icon={morning} />
-            <HexagonMenu title={"Lunch"} icon={morning} />
-            <HexagonMenu title={"Dinner"} icon={morning} />
-            <HexagonMenu title={"Snack"} icon={snack} />
-          </Menu>
-          <ThumbnailList>
+          <Grid container spacing={1} sx={{ marginTop: 2 }} columns={12}>
+            <MenuItem item xs={12} sm={6} md={3} lg={3}>
+              <HexagonMenu title={"Morning"} icon={morning} />
+            </MenuItem>
+            <MenuItem item xs={12} sm={6} md={3} lg={3}>
+              <HexagonMenu title={"Lunch"} icon={morning} />
+            </MenuItem>
+            <MenuItem item xs={12} sm={6} md={3} lg={3}>
+              <HexagonMenu title={"Dinner"} icon={morning} />
+            </MenuItem>
+            <MenuItem item xs={12} sm={6} md={3} lg={3}>
+              <HexagonMenu title={"Snack"} icon={snack} />
+            </MenuItem>
+          </Grid>
+
+          <Grid container spacing={1} sx={{ marginTop: 2 }} columns={12}>
             {data?.map((item, index) => {
               return (
-                <Thumbnail key={index} title={item.title} background={item.background} />
-              )
-            })};
-          </ThumbnailList>
+                <Grid item xs={12} sm={6} md={3} lg={3}>
+                  <Thumbnail
+                    key={index}
+                    title={item.title}
+                    background={item.background}
+                  />
+                </Grid>
+              );
+            })}
+          </Grid>
           <ButtonViewMore content={"記録をもっと見る"} />
           <ScrollButton />
         </Container>

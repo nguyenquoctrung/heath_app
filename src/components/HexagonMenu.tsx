@@ -8,6 +8,7 @@ const Hexagon = styled.div<{ background: string }>`
   background: url(${(props) => props.background});
   background-size: contain;
   background-position: center;
+  max-width: 105px;
   .box-5 {
     width: 0;
     border-bottom: 30px solid transparent;
