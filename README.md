@@ -2,6 +2,15 @@
 
 github: https://github.com/nguyenquoctrung/heath_app
 
+## Start project
+
+cd ~/path/headth_app
+
+## Install npm
+
+headth_app% npm i
+headth_app% npm start
+
 ## Available Scripts
 
 In the project directory, you can run:
