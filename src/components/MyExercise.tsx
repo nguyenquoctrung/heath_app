@@ -2,6 +2,7 @@ import React from "react";
 
 import styled from "styled-components";
 import { Colors } from "../styles/theme";
+import { List, ListItem } from "@mui/material";
 
 const Wrapper = styled.div`
   margin: 2rem 0;
@@ -34,13 +35,12 @@ const Wrapper = styled.div`
       background: ${Colors.Primary300};
       border-radius: 8px;
     }
-    padding-top: 1rem;
     overflow-y: auto;
     max-height: 15rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem 2rem;
-    padding-right: 2rem;
+    gap: 1rem 3rem;
+    padding: 1rem 2rem 0rem 2rem;
     .item {
       justify-content: space-between;
       align-items: center;
@@ -86,7 +86,21 @@ export const Exercise: React.FunctionComponent<IExerciseProps> = () => {
             return (
               <div className="item" key={index}>
                 <div className="name">
-                  <div className="item-name">{item.name}</div>
+                  <List
+                    disablePadding
+                    sx={{
+                      display: "flex",
+                      listStyleType: "disc",
+                      "& ::marker": {
+                        color: Colors.Light,
+                      },
+                    }}
+                  >
+                    <ListItem
+                      disablePadding
+                      sx={{ display: "list-item" }}
+                    >{item.name}</ListItem>
+                  </List>
                   <div className="kcal">{item.kcal}</div>
                 </div>
                 <div className="time">{item.time}</div>

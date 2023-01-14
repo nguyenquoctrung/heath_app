@@ -17,7 +17,7 @@ import Footer from "../components/Footer";
 import Article from "../components/Article";
 import Recommended from "../components/Recommended";
 import ButtonViewMore from "../components/ButtonViewMore";
-import { Grid } from "@mui/material";
+import { Grid, Container } from "@mui/material";
 const AuthModuleWrapper = styled.div`
   min-height: 100vh;
   width: 100%;
@@ -25,16 +25,6 @@ const AuthModuleWrapper = styled.div`
   font-family: "Inter";
 `;
 
-const Container = styled.div`
-  margin: 0 auto;
-  max-width: 120rem;
-  margin: 0 auto;
-  padding: 0 5rem;
-  flex: 1;
-  justify-content: space-between;
-  max-width: 900px;
-  margin: auto;
-`;
 const data = [
   {
     image: column1,
@@ -90,7 +80,7 @@ class ColumnPage extends Component {
     return (
       <AuthModuleWrapper>
         <Header />
-        <Container>
+        <Container maxWidth="md">
           <Grid container spacing={1} sx={{ marginTop: 2 }} columns={12}>
             <Grid item xs={12} sm={6} md={3} lg={3}>
               <Recommended title={"RECOMMENDED COLUMN"} subTitle={"オススメ"} />

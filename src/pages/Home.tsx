@@ -20,8 +20,7 @@ import ScrollButton from "../components/ScrollButton";
 import Thumbnail from "../components/Thumbnail";
 import Footer from "../components/Footer";
 import ButtonViewMore from "../components/ButtonViewMore";
-import { Grid } from "@mui/material";
-
+import { Grid, Container } from "@mui/material";
 const AuthModuleWrapper = styled.div`
   min-height: 100vh;
   width: 100%;
@@ -44,16 +43,6 @@ const TopPage = styled.div`
   }
   .weight {
   }
-`;
-const Container = styled.div`
-  margin: 0 auto;
-  max-width: 120rem;
-  margin: 0 auto;
-  padding: 0 5rem;
-  flex: 1;
-  justify-content: space-between;
-  max-width: 900px;
-  margin: auto;
 `;
 const MenuItem = styled(Grid)`
   display: flex;
@@ -108,7 +97,7 @@ class Home extends Component {
             <ChartWeight />
           </div>
         </TopPage>
-        <Container>
+        <Container maxWidth="md">
           <Grid container spacing={1} sx={{ marginTop: 2 }} columns={12}>
             <MenuItem item xs={12} sm={6} md={3} lg={3}>
               <HexagonMenu title={"Morning"} icon={morning} />

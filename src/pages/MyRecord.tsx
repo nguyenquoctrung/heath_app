@@ -15,7 +15,7 @@ import MyDiary from "../components/MyDiary";
 
 import ButtonViewMore from "../components/ButtonViewMore";
 import ChartWeight from "../components/ChartWeight";
-import { Grid } from "@mui/material";
+import { Grid, Container } from "@mui/material";
 
 const AuthModuleWrapper = styled.div`
   min-height: 100vh;
@@ -24,16 +24,6 @@ const AuthModuleWrapper = styled.div`
   font-family: "Inter";
 `;
 
-const Container = styled.div`
-  margin: 0 auto;
-  max-width: 120rem;
-  margin: 0 auto;
-  padding: 0 5rem;
-  flex: 1;
-  justify-content: space-between;
-  max-width: 900px;
-  margin: auto;
-`;
 
 const data = [
   {
@@ -57,7 +47,7 @@ class MyRecord extends Component {
     return (
       <AuthModuleWrapper>
         <Header />
-        <Container>
+        <Container maxWidth="md">
           <Grid container spacing={1} sx={{ marginTop: 2, marginBottom: 3 }} columns={12}>
             {data?.map((item, index) => {
               return (
